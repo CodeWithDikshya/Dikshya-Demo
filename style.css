@@ -1,95 +1,159 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    background-color: #f5f5dc;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fdf5f1;
+    color: #333;
 }
 
 .container {
-    background: blanchedalmond;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px;
-    min-height: 400px;
-    min-width: 350px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin: 0 auto;
 }
 
-.login-container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.login-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333; 
-}
-
-.input-box {
-    position: relative;
-    margin: 15px 0;
-}
-
-.input-box input {
-    width: 100%;
-    height: 50px;
-    padding: 0 20px;
-    border: 2px solid #ff7e5f; 
-    border-radius: 25px; 
-    font-size: 16px;
-    color: #333;
-    transition: border-color 0.3s;
-}
-
-.input-box input:focus {
-    border-color: lemonchiffon; 
-    outline: none;
-}
-
-.button-group {
+header {
+    background-color: #f7e1d7;
+    padding: 20px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+header .logo {
+    height: 40px;
+}
+
+.nav-search-container {
+    display: flex;
+    justify-content: flex-end;  
+    align-items: right;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    margin-right: 20px;  
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar li a.active {
+    color: #d99379;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;  
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #d99379;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero {
+    background-color: #f7e1d7;
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 15px;
     margin: 20px 0;
 }
 
-.button-group button {
-    padding: 10px 20px;
-    background: #5fcfff;
-    color: white;
-    border: none;
-    border-radius: 25px; 
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
+.hero h1 {
+    font-size: 2.5rem;
+    color: #d99379;
 }
 
-.button-group button:hover {
-    background: #f5f5dc; 
+.hero p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #555;
 }
 
-.footer {
-    text-align: center;
-    font-size: 14px;
-}
-
-.footer a {
-    color: #5fdfff; 
+.hero .btn {
     text-decoration: none;
+    color: #fff;
+    background-color: #d99379;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+.features {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.features h2 {
+    color: #d99379;
+}
+
+.feature-item {
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #f7e1d7;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;  
+    }
+
+    .navbar {
+        margin-right: 0;
+        margin-top: 10px;
+        justify-content: flex-start; 
+        width: 100%;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-end; 
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        padding: 8px 16px;
+    }
 }
