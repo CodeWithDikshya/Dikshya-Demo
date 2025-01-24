@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OptiNest Solution offers high-quality eyewear at affordable prices with excellent customer support.">
-    <meta name="keywords" content="eyewear, glasses, optics, premium eyewear">
-    <title>OptiNest Solution</title>
-    <style>
+    <meta name="description" content="Optical Solution offers premium eye care services, high-quality eyewear, and expert ophthalmologist consultations tailored to your needs.">
+    <meta name="keywords" content="optical, ophthalmology, eye care, glasses, vision, eye specialist, premium eyewear">
+    <title>Optical Solution</title>
+    <style>a
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -50,27 +50,6 @@
             color: #d99379;
         }
 
-        .search-bar {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;  
-        }
-
-        .search-bar input {
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .search-bar button {
-            padding: 5px 10px;
-            background-color: #d99379;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
         .hero {
             background-color: #f7e1d7;
             text-align: center;
@@ -108,14 +87,35 @@
             color: #d99379;
         }
 
-        .feature-item {
-            margin: 20px 0;
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item h3 {
+            color: #d99379;
+            margin-bottom: 10px;
         }
 
         footer {
             background-color: #f7e1d7;
             text-align: center;
             padding: 20px;
+        }
+
+        .contact-info {
+            margin: 20px 0;
         }
 
         .footer-nav {
@@ -136,20 +136,10 @@
             header {
                 flex-direction: column;
                 align-items: flex-start;
-                justify-content: flex-start;  
             }
 
             .navbar {
-                margin-right: 0;
                 margin-top: 10px;
-                justify-content: flex-start; 
-                width: 100%;
-            }
-
-            .search-bar {
-                margin-top: 10px;
-                width: 100%;
-                justify-content: flex-end; 
             }
 
             .hero h1 {
@@ -175,50 +165,70 @@
             <nav>
                 <ul class="navbar">
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <form class="search-bar" action="search.html" method="GET">
-                <input type="text" name="query" placeholder="Search..." aria-label="Search">
-                <button type="submit">Search</button>
-            </form>
         </div>
     </header>
     <main>
-        <section class="hero">
+        <div class="hero">
             <div class="container">
-                <h1>Welcome to OptiNest Solution</h1>
-                <p>Your one-stop shop for premium eyewear solutions.</p>
-                <a href="shop.html" class="btn">Shop Now</a>
+                <h1>Welcome to Optical Solution</h1>
+                <p>Your trusted partner for expert eye care, ophthalmologist consultations, and premium eyewear solutions.</p>
+                <a href="services.html" class="btn">Explore Services</a>
             </div>
-        </section>
-        <section class="features">
+        </div>
+        <div class="features">
             <div class="container">
-                <h2>Why Choose Us?</h2>
-                <div class="feature-item">
-                    <h3>Premium Quality</h3>
-                    <p>We provide high-quality eyewear crafted with precision.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Affordable Prices</h3>
-                    <p>Experience luxury at an affordable price.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Customer Support</h3>
-                    <p>Our team is here to assist you 24/7.</p>
+                <h2>Why Choose Optical Solution?</h2>
+                <p>We provide personalized eye care, advanced diagnostics, and a wide range of high-quality eyewear.</p>
+                <div class="services">
+                    <div class="service-item">
+                        <h3>Comprehensive Eye Exams</h3>
+                        <p>Our certified ophthalmologists use state-of-the-art technology to assess and improve your vision.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Customized Eyewear</h3>
+                        <p>Discover stylish frames and lenses tailored to your prescription and preferences.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Contact Lens Fitting</h3>
+                        <p>Find the perfect fit for your lifestyle with our variety of contact lenses.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Specialized Treatments</h3>
+                        <p>Receive treatment for conditions like glaucoma, cataracts, and dry eyes from experienced specialists.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Designer Sunglasses</h3>
+                        <p>Explore a premium collection of sunglasses that blend style with UV protection.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Vision Glasses</h3>
+                        <p>Enhance your daily life with high-quality vision glasses designed for comfort and clarity.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Eye Drops</h3>
+                        <p>Find trusted solutions for dry eyes, redness, and irritation with our range of specialized eye drops.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2025 OptiNest Solution. All rights reserved.</p>
+            <p class="contact-info">
+                Contact Us: <br>
+                Phone: +977-9841234567 <br>
+                Email: <a href="mailto:opticalsolution@.com">opticalsolution@.com</a>
+            </p>
             <ul class="footer-nav">
                 <li><a href="privacy.html">Privacy Policy</a></li>
                 <li><a href="terms.html">Terms of Service</a></li>
             </ul>
+            <p>&copy; 2025 Optical Solution. All rights reserved.</p>
         </div>
     </footer>
 </body>
