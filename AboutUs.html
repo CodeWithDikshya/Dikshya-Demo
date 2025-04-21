@@ -1,201 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiNest Optical Solutions</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - OptiNest Solution</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(135deg, #111, #222);
+      color: white;
+    }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px 40px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    header {
+      background-color: #000;
+      padding: 40px;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    h1 {
+      font-size: 2em;
+      margin: 0;
+      color: #ffcc00;
+    }
 
-        nav .logo {
-            font-size: 30px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+    p {
+      color: #ddd;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    .btn {
+      background-color: #ffcc00;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
-        nav ul li {
-            cursor: pointer;
-            font-size: 18px;
-            color: #f1f1f1;
-            transition: color 0.3s;
-        }
+    .services, .eye-issues {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
 
-        nav ul li:hover {
-            color: #4CAF50;
-        }
+    .service-box, .issue-box {
+      background: #333;
+      margin: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
 
-        main {
-            padding: 50px 20px;
-            text-align: center;
-        }
+    .eye-section-title {
+      font-size: 1.5em;
+      color: #ffcc00;
+      padding-top: 30px;
+    }
 
-        .product-section h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-            color: #333;
-        }
+    @media (max-width: 768px) {
+      .services, .eye-issues {
+        flex-direction: column;
+      }
 
-        .product-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .product-card {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .product-card h3 {
-            font-size: 24px;
-            margin-top: 15px;
-            color: #333;
-        }
-
-        .product-card p {
-            font-size: 18px;
-            margin-top: 10px;
-            color: #333;
-        }
-
-        .product-card button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 18px;
-            margin-top: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .product-card button:hover {
-            background-color: #45a049;
-            transform: translateY(-5px);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer .social-icons a:hover {
-            color: #4CAF50;
-        }
-
-        @media (max-width: 768px) {
-            .product-card {
-                width: 45%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .product-card {
-                width: 100%;
-            }
-        }
-    </style>
+      .service-box, .issue-box {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">OptiNest</div>
-            <ul>
-                <li>Home</li>
-                <li>Sunglasses</li>
-                <li>Contact Lenses</li>
-                <li>Eye Care</li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="product-section">
-            <h2>Featured Products</h2>
-            <div class="product-container">
-                <div class="product-card">
-                    <img src="sunglasses1.jpg" alt="Stylish Sunglasses">
-                    <h3>Stylish Sunglasses</h3>
-                    <p>$89.00</p>
-                    <button>Add to Cart</button>
-                </div>
+  <!-- Header -->
+  <header>
+    <h1>Welcome to OptiNest Solution</h1>
+    <p>Your trusted partner for expert eye care, ophthalmologist consultations, and premium eyewear solutions.</p>
+    <button class="btn">Explore Services</button>
+  </header>
 
-                <div class="product-card">
-                    <img src="contactlenses.jpg" alt="Premium Contact Lenses">
-                    <h3>Premium Contact Lenses</h3>
-                    <p>$45.00</p>
-                    <button>Add to Cart</button>
-                </div>
+  <!-- Services Section -->
+  <section class="services">
+    <div class="service-box">
+      <h3>Comprehensive Eye Exams</h3>
+      <p>Our certified ophthalmologists use state-of-the-art technology to assess and improve your vision.</p>
+    </div>
+    <div class="service-box">
+      <h3>Customized Eyewear</h3>
+      <p>Discover stylish frames and lenses tailored to your prescription and preferences.</p>
+    </div>
+    <div class="service-box">
+      <h3>Contact Lens Fitting</h3>
+      <p>Find the perfect fit for your lifestyle with our variety of contact lenses.</p>
+    </div>
+    <div class="service-box">
+      <h3>Specialized Treatments</h3>
+      <p>Receive treatment for conditions like glaucoma, cataracts, and dry eyes from experienced specialists.</p>
+    </div>
+    <div class="service-box">
+      <h3>Designer Sunglasses</h3>
+      <p>Explore a premium collection of sunglasses that blend style with UV protection.</p>
+    </div>
+    <div class="service-box">
+      <h3>Vision Glasses</h3>
+      <p>Enhance your daily life with high-quality vision glasses designed for comfort and clarity.</p>
+    </div>
+  </section>
 
-                <div class="product-card">
-                    <img src="eyedrops.jpg" alt="Eye Vision Drops">
-                    <h3>Eye Vision Drops</h3>
-                    <p>$25.00</p>
-                    <button>Add to Cart</button>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- Eye Issues in Nepal Section -->
+  <h2 class="eye-section-title">Common Eye Health Issues in Nepal</h2>
+  <section class="eye-issues">
+    <div class="issue-box">
+      <h3>Allergic Eye Disease</h3>
+      <p>Common in dusty areas, it causes redness, itching, and swelling of the eyes.</p>
+    </div>
+    <div class="issue-box">
+      <h3>Cataracts</h3>
+      <p>A major cause of blindness in Nepal. Often caused by aging or sun exposure.</p>
+    </div>
+    <div class="issue-box">
+      <h3>Glaucoma</h3>
+      <p>Progressive damage to the optic nerve—early detection is crucial to prevent blindness.</p>
+    </div>
+    <div class="issue-box">
+      <h3>Refractive Errors</h3>
+      <p>Uncorrected myopia, hyperopia, and astigmatism affect children and adults alike.</p>
+    </div>
+    <div class="issue-box">
+      <h3>Diabetic Retinopathy</h3>
+      <p>A serious complication of diabetes, affecting vision and potentially causing blindness.</p>
+    </div>
+    <div class="issue-box">
+      <h3>Conjunctivitis</h3>
+      <p>Highly contagious eye infection causing redness and watery discharge.</p>
+    </div>
+    <div class="issue-box">
+      <h3>Reversible Diabetic Vision Loss</h3>
+      <p>With early care, vision loss due to diabetes can be managed or reversed.</p>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 OptiNest. All Rights Reserved.</p>
-        <div class="social-icons">
-            <a href="#">Github</a>
-            <a href="#">Instagram</a>
-            <a href="#">Email</a>
-        </div>
-    </footer>
 </body>
 </html>
