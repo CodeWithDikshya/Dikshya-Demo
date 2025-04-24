@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OptiNest</title>
+  <title>OptiNest - Home</title>
   <style>
     * {
       margin: 0;
@@ -19,7 +19,7 @@
 
     header {
       background-color: #000;
-      padding: 30px 50px;
+      padding: 20px 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -45,102 +45,85 @@
       color: #FFD700;
     }
 
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 50px;
-      background-color: #111;
+    .search-container {
+      position: relative;
+    }
+
+    .search-input {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 25px;
+      border: 1px solid #FFD700;
+      outline: none;
+      transition: width 0.3s ease;
+      width: 0;
+      padding-left: 35px;
+      background-color: #222;
       color: #fff;
     }
 
-    .hero-text {
-      max-width: 600px;
+    .search-input:focus {
+      width: 250px;
     }
 
-    .hero-text h1 {
-      font-size: 3em;
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
       color: #FFD700;
-      margin-bottom: 20px;
-    }
-
-    .hero-text p {
       font-size: 1.2em;
-      color: #eee;
-      margin-bottom: 30px;
     }
-
-    .hero-text button {
-      background-color: #FFD700;
-      color: #111;
-      border: none;
-      padding: 14px 30px;
-      font-size: 1em;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .hero-text button:hover {
-      background-color: #e5be00;
-    }
-
-    .hero-img img {
-      width: 450px;
-      border-radius: 12px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .products {
+    
+    .product-section {
       padding: 60px 50px;
-      background-color: #fff;
-    }
-
-    .products h2 {
-      text-align: center;
-      font-size: 2.5em;
-      color: #111;
-      margin-bottom: 40px;
+      background-color: #f8f4ef; 
     }
 
     .product-grid {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 30px;
+      justify-items: center;
     }
 
     .product-card {
-      background: #fdfcf4;
-      border-radius: 15px;
-      padding: 20px;
+      background: #fef9f4;
+      border: 1px solid #e3d5c4; 
+      border-radius: 20px;
+      padding: 25px;
       text-align: center;
-      width: 280px;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
     }
 
     .product-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      transform: translateY(-6px);
     }
 
     .product-card h3 {
-      color: #FFD700;
-      font-size: 1.2em;
+      color: #a37a5c; 
+      font-size: 1.4em;
       margin-bottom: 10px;
     }
 
     .product-card p {
+      color: #5f5f5f; 
+    }
+
+    .add-to-cart-btn {
+      background-color: #b38b6d; 
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
       font-size: 1em;
-      color: #444;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: #966d50; 
     }
 
     footer {
@@ -151,6 +134,22 @@
       color: #bbb;
       border-top: 1px solid #222;
     }
+
+    .footer-awareness {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #f4f4f4;
+    }
+
+    .footer-awareness a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-awareness a:hover {
+      color: #ffdd77;
+    }
   </style>
 </head>
 <body>
@@ -160,130 +159,108 @@
     <nav>
       <a href="#">Home</a>
       <a href="#">About us</a>
-      <a href="#">Awareness</a>
       <a href="#">Contact</a>
       <a href="#">Login</a>
     </nav>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search"/>
+      <span class="search-icon">Search</span>
+    </div>
   </header>
-
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Clarity with Care</h1>
-      <p>Discover premium eye care essentials—from stylish spectacles to soothing eye drops and protective sunglasses. Your vision, our mission.</p>
-      <button>Explore Products</button>
-    </div>
-    <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Eye Care">
-    </div>
-  </section>
-
-  <section class="products">
-    <h2>Our Essentials</h2>
+  <section class="product-section">
+    <h2 style="text-align: center; font-size: 2.5em; color: #111; margin-bottom: 40px;">Our Products</h2>
     <div class="product-grid">
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1603575448374-b74f1c574e6e?auto=format&fit=crop&w=500&q=80" alt="Spectacles">
         <h3>Trendy Spectacles</h3>
-        <p>Lightweight, stylish, and perfect for daily use with blue-light filter options.</p>
+        <p>Stylish design with blue light filter. Perfect for everyday use.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
         <h3>Soothing Eye Drops</h3>
-        <p>Relieve dryness, redness, and irritation with doctor-recommended drops.</p>
+        <p>Relieves dry, itchy eyes with fast relief.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
         <h3>Polarized Sunglasses</h3>
-        <p>UV protection with elegant designs to match your outdoor lifestyle.</p>
+        <p>UV protection and stylish designs.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
-    </div>
-  </section>
-
-  <!-- Additional Layout Sections Start -->
-  <section class="products">
-    <h2>Our Essentials 2</h2>
-    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Frames">
+        <h3>Classic Eyewear Frames</h3>
+        <p>Timeless and durable design for all-day comfort.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1603839929604-b84b60d6f05a?auto=format&fit=crop&w=500&q=80" alt="Ophthalmologist Machine">
+        <h3>Ophthalmologist Diagnostic Machine</h3>
+        <p>High precision machine for eye diagnosis and health tracking.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Spectacles">
-        <h3>Classic Spectacles</h3>
-        <p>Timeless and durable design with comfort and style.</p>
+        <h3>Modern Eyewear</h3>
+        <p>Fashionable eyewear with comfort and style.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1603575448374-b74f1c574e6e?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
-        <h3>Moisturizing Eye Drops</h3>
-        <p>Combat dryness and irritation for long-lasting relief.</p>
+        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
+        <h3>Hydrating Eye Drops</h3>
+        <p>Keep your eyes refreshed and hydrated throughout the day.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
-        <h3>Sporty Sunglasses</h3>
-        <p>Durable sunglasses designed for active lifestyles.</p>
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Sunglasses">
+        <h3>UV Protective Sunglasses</h3>
+        <p>Protect your eyes from harmful UV rays with style.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
-    </div>
-  </section>
-
-  <section class="products">
-    <h2>Eyewear Collection</h2>
-    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Eyewear Frames">
+        <h3>Designer Eyewear Frames</h3>
+        <p>Durable frames with a premium look.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1603839929604-b84b60d6f05a?auto=format&fit=crop&w=500&q=80" alt="Ophthalmologist Machine">
+        <h3>Ophthalmology Testing Equipment</h3>
+        <p>Comprehensive eye testing machine for professionals.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
       <div class="product-card">
         <img src="https://images.unsplash.com/photo-1603575448374-b74f1c574e6e?auto=format&fit=crop&w=500&q=80" alt="Spectacles">
-        <h3>Luxury Spectacles</h3>
-        <p>Elegant frames with premium lenses for crystal-clear vision.</p>
+        <h3>Elegant Spectacles</h3>
+        <p>Perfect for both casual and formal looks.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
-        <h3>Refresh Eye Drops</h3>
-        <p>Instant relief from tired eyes with a refreshing formula.</p>
+        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
+        <h3>Antibacterial Eye Drops</h3>
+        <p>Fast-acting antibacterial drops for your eyes.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
-        <h3>Fashion Sunglasses</h3>
-        <p>Perfectly designed sunglasses to enhance your style.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="products">
-    <h2>Health & Vision</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Spectacles">
-        <h3>Health Spectacles</h3>
-        <p>Designed to reduce eye strain and improve comfort during long hours of use.</p>
+        <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
+        <h3>Retro Style Sunglasses</h3>
+        <p>Vintage look with modern UV protection.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1603575448374-b74f1c574e6e?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
-        <h3>Cooling Eye Drops</h3>
-        <p>Perfect for reducing swelling and irritation after long days.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
-        <h3>Outdoor Sunglasses</h3>
-        <p>Polarized lenses designed for hiking, cycling, and outdoor activities.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="products">
-    <h2>Premium Collection</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1603575448374-b74f1c574e6e?auto=format&fit=crop&w=500&q=80" alt="Spectacles">
-        <h3>Premium Eyewear</h3>
-        <p>High-end materials with superior comfort and style.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
-        <h3>Therapeutic Eye Drops</h3>
-        <p>Doctor-formulated for enhanced eye health and relief.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
-        <h3>Stylish Sunglasses</h3>
-        <p>Eye-catching designs for an upscale look.</p>
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Frames">
+        <h3>Lightweight Eyewear</h3>
+        <p>Comfortable frames for all-day wear.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
     </div>
   </section>
   <footer>
-    &copy; 2025 OptiNest. All rights reserved.
+    <p>&copy; 2025 OptiNest. All Rights Reserved.</p>
+    <div class="footer-awareness">
+      <p>Stay aware of your eye health. <a href="#">Learn More</a></p>
+    </div>
   </footer>
 
 </body>
