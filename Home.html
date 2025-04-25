@@ -1,154 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OptiNest - Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OptiNest - Eyeglasses for All</title>
   <style>
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      background-color: #fdfcf9;
-      color: #222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
     header {
-      background-color: #000;
-      padding: 20px 50px;
+      background-color: #212529;
+      color: white;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #fff;
+      flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 1.8em;
-      color: #FFD700;
+      font-size: 28px;
       font-weight: bold;
-      letter-spacing: 1px;
+      color: #ffc107;
     }
 
-    nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: #FFD700;
+    nav ul li a:hover {
+      color: #ffc107;
     }
 
-    .search-container {
-      position: relative;
+    .search-bar {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
-    .search-input {
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 25px;
-      border: 1px solid #FFD700;
-      outline: none;
-      transition: width 0.3s ease;
-      width: 0;
-      padding-left: 35px;
-      background-color: #222;
-      color: #fff;
+    .search-bar input {
+      padding: 8px;
+      width: 300px;
+      border: none;
+      border-radius: 4px;
     }
 
-    .search-input:focus {
-      width: 250px;
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1617056554175-282d3693c91c') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
     }
 
-    .search-icon {
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-      color: #FFD700;
-      font-size: 1.2em;
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
     }
-    
-    .product-section {
-      padding: 60px 50px;
-      background-color: #f8f4ef; 
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero .cta-btn {
+      background-color: #ffc107;
+      color: #212529;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .hero .cta-btn:hover {
+      background-color: #e0a800;
+    }
+
+    /* Product Section */
+    .products {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .products h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: #333;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); 
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 30px;
-      justify-items: center;
     }
 
     .product-card {
-      background: #fef9f4;
-      border: 1px solid #e3d5c4; 
-      border-radius: 20px;
-      padding: 25px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: center;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
 
     .product-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
     }
 
     .product-card h3 {
-      color: #a37a5c; 
-      font-size: 1.4em;
       margin-bottom: 10px;
+      font-size: 20px;
+      color: #444;
     }
 
     .product-card p {
-      color: #5f5f5f; 
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
     }
 
     .add-to-cart-btn {
-      background-color: #b38b6d; 
-      color: #fff;
+      background-color: #28a745;
+      color: white;
       border: none;
-      padding: 10px 25px;
-      font-size: 1em;
-      border-radius: 25px;
+      padding: 10px 18px;
+      border-radius: 5px;
+      font-size: 14px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
     .add-to-cart-btn:hover {
-      background-color: #966d50; 
+      background-color: #218838;
     }
 
+    /* Footer */
     footer {
-      background-color: #000;
+      background-color: #212529;
+      color: white;
+      padding: 30px 20px;
       text-align: center;
-      padding: 30px;
-      font-size: 1em;
-      color: #bbb;
-      border-top: 1px solid #222;
+      margin-top: 60px;
     }
 
     .footer-awareness {
-      margin-top: 20px;
-      font-size: 0.9em;
-      color: #f4f4f4;
+      margin-top: 10px;
+      font-size: 14px;
     }
 
     .footer-awareness a {
-      color: #FFD700;
-      text-decoration: none;
-      font-weight: 600;
+      color: #ffc107;
     }
 
     .footer-awareness a:hover {
-      color: #ffdd77;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .search-bar input {
+        width: 80%;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -157,111 +217,231 @@
   <header>
     <div class="logo">OptiNest</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About us</a>
-      <a href="#">Contact</a>
-      <a href="#">Login</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
     </nav>
-    <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search"/>
-      <span class="search-icon">Search</span>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for glasses...">
     </div>
   </header>
-  <section class="product-section">
-    <h2 style="text-align: center; font-size: 2.5em; color: #111; margin-bottom: 40px;">Our Products</h2>
+
+  <section class="hero">
+    <h1 style="color: black;">See the World in Style</h1>
+    <p style="color: black;">Discover high-quality glasses for every face and every fashion.</p>
+    <button class="cta-btn">Explore Collection</button>
+  </section>
+
+  <section class="products">
+    <h2>Featured Products</h2>
     <div class="product-grid">
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1603575448374-b74f1c574e6e?auto=format&fit=crop&w=500&q=80" alt="Spectacles">
-        <h3>Trendy Spectacles</h3>
-        <p>Stylish design with blue light filter. Perfect for everyday use.</p>
+        <img src="https://images.unsplash.com/photo-1598532200283-9e5f8f9c9a53" alt="Product 1">
+        <h3>Classic Black Frame</h3>
+        <p>Timeless and elegant eyewear for every occasion.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
-        <h3>Soothing Eye Drops</h3>
-        <p>Relieves dry, itchy eyes with fast relief.</p>
+        <img src="https://images.unsplash.com/photo-1607082349567-54e6673aeb65" alt="Product 2">
+        <h3>Modern Clear Glasses</h3>
+        <p>Trendy transparent frames to elevate your look.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
-        <h3>Polarized Sunglasses</h3>
-        <p>UV protection and stylish designs.</p>
+        <img src="https://images.unsplash.com/photo-1606755962773-bf770b9f20d5" alt="Product 3">
+        <h3>Blue Light Blockers</h3>
+        <p>Protect your eyes during screen time in style.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Frames">
-        <h3>Classic Eyewear Frames</h3>
-        <p>Timeless and durable design for all-day comfort.</p>
+        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d03" alt="Product 4">
+        <h3>Kids Colorful Frames</h3>
+        <p>Fun and sturdy glasses for young trendsetters.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1603839929604-b84b60d6f05a?auto=format&fit=crop&w=500&q=80" alt="Ophthalmologist Machine">
-        <h3>Ophthalmologist Diagnostic Machine</h3>
-        <p>High precision machine for eye diagnosis and health tracking.</p>
+        <img src="https://images.unsplash.com/photo-1522338140262-d8db5f8fdd9b" alt="Product 5">
+        <h3>Elegant Metal Frame</h3>
+        <p>Minimalist design meets sophisticated metal finish.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Spectacles">
-        <h3>Modern Eyewear</h3>
-        <p>Fashionable eyewear with comfort and style.</p>
+        <img src="https://images.unsplash.com/photo-1602920536097-8a48bfb62f63" alt="Product 6">
+        <h3>Vintage Round Glasses</h3>
+        <p>Retro style for the modern fashionista.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
-        <h3>Hydrating Eye Drops</h3>
-        <p>Keep your eyes refreshed and hydrated throughout the day.</p>
+        <img src="https://images.unsplash.com/photo-1568140760-95cc9cf8c0b0" alt="Product 7">
+        <h3>Cat-Eye Frames</h3>
+        <p>Chic and edgy frames for the bold.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Sunglasses">
-        <h3>UV Protective Sunglasses</h3>
-        <p>Protect your eyes from harmful UV rays with style.</p>
+        <img src="https://images.unsplash.com/photo-1589927986089-358b5d1b766d" alt="Product 8">
+        <h3>Luxury Gold Frame</h3>
+        <p>For those who appreciate elegance in every detail.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Eyewear Frames">
-        <h3>Designer Eyewear Frames</h3>
-        <p>Durable frames with a premium look.</p>
+        <img src="https://images.unsplash.com/photo-1573037553015-b4e30337d7d4" alt="Product 9">
+        <h3>Bold Rectangle Glasses</h3>
+        <p>Sharp edges for a powerful look.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1603839929604-b84b60d6f05a?auto=format&fit=crop&w=500&q=80" alt="Ophthalmologist Machine">
-        <h3>Ophthalmology Testing Equipment</h3>
-        <p>Comprehensive eye testing machine for professionals.</p>
+        <img src="https://images.unsplash.com/photo-1586947438120-cb8c1aab58bb" alt="Product 10">
+        <h3>Soft Blue Gradient Glasses</h3>
+        <p>Comfortable and stylish with a unique gradient.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1603575448374-b74f1c574e6e?auto=format&fit=crop&w=500&q=80" alt="Spectacles">
-        <h3>Elegant Spectacles</h3>
-        <p>Perfect for both casual and formal looks.</p>
+        <img src="https://images.unsplash.com/photo-1567016529-9b1d43042f24" alt="Product 11">
+        <h3>Chic Brown Oval Glasses</h3>
+        <p>For a balanced and sophisticated look.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1580281657524-97b4149e1c94?auto=format&fit=crop&w=500&q=80" alt="Eye Drops">
-        <h3>Antibacterial Eye Drops</h3>
-        <p>Fast-acting antibacterial drops for your eyes.</p>
+        <img src="https://images.unsplash.com/photo-1583481981044-d3e869a038a2" alt="Product 12">
+        <h3>Grey Rectangle Eyewear</h3>
+        <p>Simple yet elegant eyewear for any occasion.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1628531567573-b2572cd80c34?auto=format&fit=crop&w=500&q=80" alt="Sunglasses">
-        <h3>Retro Style Sunglasses</h3>
-        <p>Vintage look with modern UV protection.</p>
+        <img src="https://images.unsplash.com/photo-1518423020622-4ecdb0e62b8b" alt="Product 13">
+        <h3>Fashionable Aviators</h3>
+        <p>Stay stylish with these iconic aviator sunglasses.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Frames">
-        <h3>Lightweight Eyewear</h3>
-        <p>Comfortable frames for all-day wear.</p>
+        <img src="https://images.unsplash.com/photo-1534766324-e70361e98f44" alt="Product 14">
+        <h3>Multi-Colored Wayfarers</h3>
+        <p>Bring fun colors to your everyday style.</p>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589754085339-f5dceff4394f" alt="Product 15">
+        <h3>Polaroid Sunglasses</h3>
+        <p>Top-tier UV protection in a stylish package.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1562553436-4c66b1fd1c8a" alt="Product 16">
+        <h3>Large Round Eyeglasses</h3>
+        <p>Stand out with these statement round glasses.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1601611596378-b28f40b5f2d5" alt="Product 17">
+        <h3>Minimalist Black Frames</h3>
+        <p>Sleek and stylish with a modern touch.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1565683344-e5b7ffb4c2b4" alt="Product 18">
+        <h3>Silver Stainless Frames</h3>
+        <p>Perfect for everyday wear with an industrial edge.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1607571218890-0172d4e9b7e1" alt="Product 19">
+        <h3>Oversized Square Glasses</h3>
+        <p>Bold and beautiful oversized frames.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1547721064-d4f3c6b64b01" alt="Product 20">
+        <h3>Metal Round Glasses</h3>
+        <p>Timeless design with metal accents.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589825073929-1e82964bc3cc" alt="Product 21">
+        <h3>Dark Tinted Shades</h3>
+        <p>Perfect for sunny days and outdoor activities.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1596570323805-087057c1c9d2" alt="Product 22">
+        <h3>Retro 90s Frames</h3>
+        <p>Channel the '90s with these throwback frames.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589825073929-1e82964bc3cc" alt="Blueprint Spectacles">
+        <h3>Blueprint Spectacles</h3>
+        <p>Stylish spectacles designed for precision and clarity.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589825073929-1e82964bc3cc" alt="Ophthalmologist Machine">
+        <h3>Ophthalmologist Machine</h3>
+        <p>Advanced technology for eye examinations and diagnostics.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589825073929-1e82964bc3cc" alt="Eye Drops">
+        <h3>Eye Drops</h3>
+        <p>Soothing eye drops for dry and irritated eyes.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589825073929-1e82964bc3cc" alt="Contact Lens Solution">
+        <h3>Contact Lens Solution</h3>
+        <p>Keep your lenses clean and comfortable with our solution.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589825073929-1e82964bc3cc" alt="Eye Care Kit">
+        <h3>Eye Care Kit</h3>
+        <p>Everything you need for optimal eye health.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589825073929-1e82964bc3cc" alt="Vision Test Kit">
+        <h3>Vision Test Kit</h3>
+        <p>Test your vision at home with this comprehensive kit.</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1589825073929-1e82964bc3cc" alt="Eye Protection Goggles">
+        <h3>Eye Protection Goggles</h3>
+        <p>Protect your eyes during sports
     </div>
   </section>
-  <footer>
-    <p>&copy; 2025 OptiNest. All Rights Reserved.</p>
-    <div class="footer-awareness">
-      <p>Stay aware of your eye health. <a href="#">Learn More</a></p>
-    </div>
-  </footer>
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 OptiNest. All rights reserved. <a href="#">Learn More</a></p>
+  </div>
+</footer>
+<style>
+  footer {
+    background-color: #212529;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px;
+  }
 
-</body>
-</html>
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links {
+    margin-top: 15px;
+  }
+
+  p a {
+    color: #ffc107;
+    text-decoration: none;
+  }
+
+  p a:hover {
+    text-decoration: underline;
+  }
+</style>
