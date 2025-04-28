@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OptiNest</title>
+  <title>OptiNest - Feature Page</title>
   <style>
     * {
       margin: 0;
@@ -91,21 +91,50 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     }
 
+    .sliding-container {
+      display: flex;
+      overflow: hidden;
+      margin: 40px 0;
+    }
+
+    .sliding-item {
+      min-width: 100%;
+      text-align: center;
+      padding: 50px 0;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .sliding-item h2 {
+      font-size: 2.5em;
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+
+    .sliding-item p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .new-arrival {
+      background-color: #f4f4f4;
+    }
+
+    .best-seller {
+      background-color: #e0e0e0;
+    }
+
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo">OptiNest</div>
     <nav>
       <a href="#">Home</a>
       <a href="#">About us</a>
-      <a href="#">Awareness</a>
       <a href="#">Contact</a>
       <a href="#">Login</a>
     </nav>
   </header>
-
   <section class="hero">
     <div class="hero-text">
       <h1>Clarity with Care</h1>
@@ -116,6 +145,33 @@
       <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a9f5?auto=format&fit=crop&w=600&q=80" alt="Eye Care">
     </div>
   </section>
+  <section class="sliding-container" id="slidingContainer">
+    <div class="sliding-item new-arrival">
+      <h2>New Arrival</h2>
+      <p>Explore our latest collection of eye care products, from modern glasses to advanced contact lenses.</p>
+    </div>
+    <div class="sliding-item best-seller">
+      <h2>Best Seller</h2>
+      <p>Check out our top-rated products, loved by customers for their quality, comfort, and design.</p>
+    </div>
+  </section>
+
+  <script>
+    let currentSlide = 0;
+    function slideContent() {
+      const slides = document.querySelectorAll('.sliding-item');
+      const container = document.getElementById('slidingContainer');
+      
+      currentSlide++;
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+
+      const slideWidth = slides[0].offsetWidth;
+      container.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+    }
+    setInterval(slideContent, 3000); 
+  </script>
 
 </body>
 </html>
