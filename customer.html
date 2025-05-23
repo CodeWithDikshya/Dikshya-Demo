@@ -1,89 +1,148 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiNest</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Playwrite+VN:wght@100..400&display=swap" rel="stylesheet">
+    <title>Aesthetic Customer Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-color:#BFD4DA;
+            background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
         }
-        .headings {
-            position: absolute;
-            top: 0px;
-            text-align: center;
+        .login-container {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             width: 100%;
-            font-size: 30px;
-            font-weight: bold;
-            color: rgb(0, 0, 0);
-            font-family:"Kanit", serif;
-           
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            animation: fadeIn 1s ease-in-out;
         }
-        .login_form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgb(249, 249, 249);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(78, 226, 255, 0.1);
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-        .login_form label, .login_form input {
-            margin: 10px 0;
+        .input-field {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: #1f2937;
+            outline: none;
+            border-radius: 8px;
         }
-        .buttons {
-            margin-top: 10px;
+        .input-field:focus {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-color: #93c5fd;
         }
-        .sign_up {
-            margin-top: 10px;
+        .input-field::placeholder {
+            color: rgba(107, 114, 128, 0.7);
         }
-        .buttons button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: rgb(2, 25, 1);
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .login-btn {
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            transition: all 0.3s ease;
         }
-        .buttons button:hover {
-            background-color: bisque;
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-        table {
-            border-spacing: 10px;
+        .error {
+            color: #ef4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .link {
+            color: #60a5fa;
+            transition: color 0.3s ease;
+        }
+        .link:hover {
+            color: #2563eb;
+        }
+        .bg-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            animation: float 15s infinite ease-in-out;
+        }
+        .circle:nth-child(1) { width: 300px; height: 300px; top: 10%; left: 15%; }
+        .circle:nth-child(2) { width: 200px; height: 200px; top: 60%; left: 70%; animation-delay: 2s; }
+        .circle:nth-child(3) { width: 150px; height: 150px; top: 30%; left: 80%; animation-delay: 4s; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
     </style>
 </head>
 <body>
-    <div class="headings">
-        <h1>OptiNest</h1>
+    <div class="bg-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
     </div>
-    <div class="login_form">
-        <table>
-            <tr>
-                <td><label for="username">User_ID:</label></td>
-                <td><input type="text" name="name" id="username" placeholder="User_ID" required></td>
-            </tr>
-            <tr>
-                <td><label for="password">Password:</label></td>
-                <td><input type="password" name="password" id="password" placeholder="Enter your password"></td> 
-            </tr>
-        </table>
-        <div class="buttons">
-            <button type="submit">Login</button>
-        </div>
+    <div class="login-container">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Welcome Back</h2>
+        <form>
+            <div class="mb-6">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input type="email" id="email" name="email" class="input-field p-3 w-full rounded-lg" placeholder="Enter your email" required>
+                <p id="email-error" class="error">Please enter a valid email address</p>
+            </div>
+            <div class="mb-8">
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                <input type="password" id="password" name="password" class="input-field p-3 w-full rounded-lg" placeholder="Enter your password" required>
+                <p id="password-error" class="error">Password must be at least 6 characters</p>
+            </div>
+            <button type="button" onclick="validateForm()" class="login-btn w-full text-white p-3 rounded-lg font-semibold">Login</button>
+            <p class="mt-6 text-center text-sm text-gray-600">
+                Don't have an account? <a href="#" class="link">Sign up</a>
+            </p>
+        </form>
     </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const emailError = document.getElementById('email-error');
+            const passwordError = document.getElementById('password-error');
+            let valid = true;
+
+            emailError.style.display = 'none';
+            passwordError.style.display = 'none';
+
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                emailError.style.display = 'block';
+                valid = false;
+            }
+
+            if (!password || password.length < 6) {
+                passwordError.style.display = 'block';
+                valid = false;
+            }
+
+            if (valid) {
+                alert('Login successful!'); // Replace with actual authentication logic
+            }
+        }
+    </script>
 </body>
 </html>
