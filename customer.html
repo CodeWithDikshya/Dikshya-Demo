@@ -1,148 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aesthetic Customer Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            overflow: hidden;
-        }
-        .login-container {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .input-field {
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            color: #1f2937;
-            outline: none;
-            border-radius: 8px;
-        }
-        .input-field:focus {
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-color: #93c5fd;
-        }
-        .input-field::placeholder {
-            color: rgba(107, 114, 128, 0.7);
-        }
-        .login-btn {
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            transition: all 0.3s ease;
-        }
-        .login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .error {
-            color: #ef4444;
-            font-size: 0.75rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-        .link {
-            color: #60a5fa;
-            transition: color 0.3s ease;
-        }
-        .link:hover {
-            color: #2563eb;
-        }
-        .bg-circles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            animation: float 15s infinite ease-in-out;
-        }
-        .circle:nth-child(1) { width: 300px; height: 300px; top: 10%; left: 15%; }
-        .circle:nth-child(2) { width: 200px; height: 200px; top: 60%; left: 70%; animation-delay: 2s; }
-        .circle:nth-child(3) { width: 150px; height: 150px; top: 30%; left: 80%; animation-delay: 4s; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OptiNest Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 900px;
+      width: 90%;
+    }
+
+    .login-box {
+      flex: 1;
+      padding: 20px 30px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .login-box h2 {
+      font-size: 32px;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .login-box p {
+      color: #64748b;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ffffff;
+      font-size: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .forgot {
+      text-align: right;
+      font-size: 12px;
+      margin-bottom: 20px;
+      color: #3b82f6;
+      text-decoration: none;
+      display: block;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2563eb;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .social-buttons a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .social-buttons a:hover {
+      transform: scale(1.1);
+    }
+
+    .social-buttons img {
+      width: 22px;
+      height: 22px;
+    }
+
+    .register-text {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .register-text a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .character {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .character img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+      }
+      .character {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="bg-circles">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+
+  <div class="container">
+    <div class="login-box">
+      <div class="logo">OptiNest</div>
+      <h2>Login</h2>
+      <form>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="username@gmail.com" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password" required>
+        
+        <a href="#" class="forgot">Forgot Password?</a>
+        
+        <button type="submit">Sign in</button>
+        
+        <div class="social-buttons">
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" /></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" /></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" /></a>
+        </div>
+        
+        <div class="register-text">
+          Don’t have an account yet? <a href="#">Register for free</a>
+        </div>
+      </form>
     </div>
-    <div class="login-container">
-        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Welcome Back</h2>
-        <form>
-            <div class="mb-6">
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                <input type="email" id="email" name="email" class="input-field p-3 w-full rounded-lg" placeholder="Enter your email" required>
-                <p id="email-error" class="error">Please enter a valid email address</p>
-            </div>
-            <div class="mb-8">
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
-                <input type="password" id="password" name="password" class="input-field p-3 w-full rounded-lg" placeholder="Enter your password" required>
-                <p id="password-error" class="error">Password must be at least 6 characters</p>
-            </div>
-            <button type="button" onclick="validateForm()" class="login-btn w-full text-white p-3 rounded-lg font-semibold">Login</button>
-            <p class="mt-6 text-center text-sm text-gray-600">
-                Don't have an account? <a href="#" class="link">Sign up</a>
-            </p>
-        </form>
+    
+    <div class="character">
+      <img src="https://i.imgur.com/L9y4lEP.png" alt="Character" />
     </div>
+  </div>
 
-    <script>
-        function validateForm() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const emailError = document.getElementById('email-error');
-            const passwordError = document.getElementById('password-error');
-            let valid = true;
-
-            emailError.style.display = 'none';
-            passwordError.style.display = 'none';
-
-            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                emailError.style.display = 'block';
-                valid = false;
-            }
-
-            if (!password || password.length < 6) {
-                passwordError.style.display = 'block';
-                valid = false;
-            }
-
-            if (valid) {
-                alert('Login successful!'); // Replace with actual authentication logic
-            }
-        }
-    </script>
 </body>
 </html>
